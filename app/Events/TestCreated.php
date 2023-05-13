@@ -4,11 +4,10 @@ namespace App\Events;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class TestCreated implements ShouldQueue
+class TestCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 

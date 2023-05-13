@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use PDF;
 
-class GeneratePdf
+class GeneratePdf implements ShouldQueue
 {
     public function __construct()
     {
