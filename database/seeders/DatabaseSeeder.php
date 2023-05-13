@@ -27,14 +27,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $test3 = Test::create([
-            'subject' => 'efgh',
+            'subject' => '16 mins from now',
             'topic' => 'atom',
             'questions' => "1.Are two atoms of the same element identical?<br />2.Can water stay liquid below zero degrees Celsius?<br />3.Can you light a diamond on fire?<br />4.How bad of an alcoholic do you <br />5.have to be to have your brain affected?<br />6.How can glass be a liquid if it's so hard?<br />7.How do I know if something is an acid so I can avoid eating it?",
-            'schedule_on' => Carbon::now()->addMinutes(5)
+            'schedule_on' => Carbon::now()->addMinutes(16)
         ]);
 
-        event(new TestCreated($test1));
-        event(new TestCreated($test2));
-        event(new TestCreated($test3));
     }
 }

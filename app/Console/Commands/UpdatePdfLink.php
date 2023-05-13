@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Events\TestCreated;
 use App\Models\Test;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
@@ -21,6 +22,8 @@ class UpdatePdfLink extends Command
 
             foreach($tests as $value)
             {
+                event(new TestCreated($value));
+
                 Test::find($value->id)->update([
                     'pdf_link' => route('downloadPdf', [$value->id])
                 ]);
